@@ -1,0 +1,5 @@
+title: simanapo
+description: simanapo's apps
+markdown: kramdown
+include:
+  - .well-known

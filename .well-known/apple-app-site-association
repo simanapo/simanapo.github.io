@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["AJG4GTM4M7.jp.futariwari.app"],
+        "components": [
+          {
+            "/": "/g/*",
+            "comment": "ふたりわり ペア参加 URL"
+          },
+          {
+            "/": "/",
+            "comment": "ふたりわり トップ"
+          }
+        ]
+      }
+    ]
+  }
+}
