@@ -3,24 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ふたりわり</title>
+<title>ふたりわりに参加 💕</title>
+<meta name="description" content="カップルのデート代の貸し借りメモ&自動精算アプリ「ふたりわり」のペア招待リンクです">
+<meta property="og:title" content="ふたりわりに参加してね 💕">
+<meta property="og:description" content="カップルのデート代の貸し借りメモ&自動精算アプリ「ふたりわり」のペアに招待されています">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://simanapo.github.io/">
+<meta name="twitter:card" content="summary">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #ffc8a8, #ff7388); color: #fff; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-  .card { max-width: 480px; background: rgba(255,255,255,0.92); color: #333; border-radius: 24px; padding: 40px 28px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
-  h1 { margin: 0 0 16px; font-size: 28px; }
-  p { line-height: 1.7; margin: 12px 0; }
-  .heart { font-size: 64px; margin-bottom: 8px; }
-  .note { font-size: 13px; color: #666; margin-top: 24px; }
-  a { color: #d33; text-decoration: none; font-weight: 600; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif; background: linear-gradient(135deg, #ffc8a8, #ff7388); color: #fff; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .card { max-width: 480px; width: 100%; background: rgba(255,255,255,0.94); color: #333; border-radius: 24px; padding: 36px 28px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.15); box-sizing: border-box; }
+  h1 { margin: 0 0 12px; font-size: 22px; }
+  p { line-height: 1.6; margin: 8px 0; font-size: 14px; color: #555; }
+  .heart { font-size: 56px; margin-bottom: 4px; }
+  .btn { display: inline-block; padding: 14px 28px; margin: 6px 4px; background: #ff5470; color: #fff !important; text-decoration: none; border-radius: 99px; font-weight: 700; font-size: 16px; box-shadow: 0 4px 12px rgba(255,84,112,0.4); }
+  .btn.secondary { background: #fff; color: #ff5470 !important; border: 2px solid #ff5470; box-shadow: none; }
+  .note { font-size: 12px; color: #888; margin-top: 18px; }
+  .hidden { display: none; }
 </style>
 </head>
 <body>
   <div class="card">
     <div class="heart">💕</div>
-    <h1>このリンクはアプリで開きます</h1>
-    <p>「ふたりわり」をインストール済みの端末で、このリンクをタップしてください。</p>
-    <p class="note">未インストールの場合は、もうしばらくお待ちください。App Store で公開準備中です。</p>
-    <p class="note"><a href="/">simanapo.github.io トップへ</a></p>
+    <div id="invite-block" class="hidden">
+      <h1>ふたりわりに参加してね</h1>
+      <p>パートナーから「ふたりわり」のペアに招待されています。</p>
+      <p><a id="open-app" class="btn" href="#">アプリで開く</a></p>
+      <p><a class="btn secondary" href="https://apps.apple.com/jp/app/id6768901111">App Store で入手</a></p>
+      <p class="note">アプリをインストール済みなら「アプリで開く」をタップ。LINE などのアプリ内ブラウザで開いたときに反応しない場合は、ブラウザ右上のメニューから「Safariで開く」を選んでね。</p>
+    </div>
+    <div id="generic-block">
+      <h1>ふたりわり</h1>
+      <p>カップルのデート代の貸し借りメモ&自動精算アプリ</p>
+      <p><a class="btn" href="https://apps.apple.com/jp/app/id6768901111">App Store で入手</a></p>
+      <p class="note"><a href="/">simanapo.github.io トップへ</a></p>
+    </div>
   </div>
+  <script>
+    (function () {
+      // パスから /g/{token} を抽出して、招待向けの UI に切り替える
+      var match = window.location.pathname.match(/^\/g\/([^\/?#]+)/);
+      if (!match) return;
+      var token = match[1];
+      // Custom Scheme で App を起こす(Universal Link が発火しない LINE 内ブラウザ等の救済)
+      var schemeUrl = 'warikan://g/' + encodeURIComponent(token);
+      document.getElementById('open-app').setAttribute('href', schemeUrl);
+      document.getElementById('invite-block').classList.remove('hidden');
+      document.getElementById('generic-block').classList.add('hidden');
+      // 自動で開きに行く(失敗してもユーザーが手動でボタンを押せる)
+      setTimeout(function () {
+        window.location.href = schemeUrl;
+      }, 400);
+    })();
+  </script>
 </body>
 </html>
