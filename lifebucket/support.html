@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>サポート - ライフバケット</title>
+<meta name="description" content="ライフバケット (iOS / Android) のサポート。よくある質問とお問い合わせ。">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: #FFF8E1;
+    color: #1F2937;
+    line-height: 1.7;
+    margin: 0;
+    padding: 32px 20px 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 720px; margin: 0 auto; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+  header .brand { font-weight: 800; color: #0F766E; font-size: 18px; }
+  h1 { font-size: 28px; margin: 8px 0 4px; }
+  .meta { color: #6B7280; font-size: 13px; margin-bottom: 32px; }
+  h2 { font-size: 18px; margin-top: 32px; margin-bottom: 12px; color: #1F2937; }
+  p { color: #4B5563; font-size: 15px; }
+  details { background: white; border: 1px solid #E5E7EB; border-radius: 14px; padding: 16px 20px; margin-bottom: 12px; }
+  summary { font-weight: 600; cursor: pointer; color: #1F2937; }
+  details[open] summary { margin-bottom: 8px; }
+  details p { margin: 0; color: #4B5563; font-size: 14px; }
+  a { color: #0F766E; }
+  footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #E5E7EB; text-align: center; color: #6B7280; font-size: 12px; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="brand">ライフバケット</span>
+    </header>
+    <h1>サポート</h1>
+    <div class="meta">よくある質問とお問い合わせ</div>
+
+    <h2>よくある質問</h2>
+
+    <details>
+      <summary>データはどこに保存されますか?</summary>
+      <p>すべてのデータは端末内に保存されます。サーバーには送信されません。詳しくは<a href="./privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    </details>
+
+    <details>
+      <summary>機種変更したら、データは引き継げますか?</summary>
+      <p>iOS の iCloud バックアップに乗せていれば、復元時にアプリのデータも復元されます。手動で書き出したい場合は「設定 → バックアップを書き出す」から JSON ファイルを保存できます。</p>
+    </details>
+
+    <details>
+      <summary>想定寿命を変えたい</summary>
+      <p>設定タブの「想定する年齢」から、60〜100 歳の範囲で変更できます。「残り N 年」の表示やリマインダーの基準として使われます。</p>
+    </details>
+
+    <details>
+      <summary>年代帯はあとから変えられますか?</summary>
+      <p>はい。項目をタップ → 編集アイコン (右上の鉛筆) から、年齢範囲スライダーを動かして変更できます。</p>
+    </details>
+
+    <details>
+      <summary>通知が来ません</summary>
+      <p>設定タブの「年代帯のリマインダー」を ON にし、iOS の設定アプリ →「ライフバケット」→「通知」で通知が許可されているか確認してください。</p>
+    </details>
+
+    <h2>お問い合わせ</h2>
+    <p>
+      不具合報告・機能要望などは
+      <a href="mailto:kitamori6@gmail.com">kitamori6@gmail.com</a>
+      までご連絡ください。
+    </p>
+
+    <footer>© 2026 ライフバケット / simanapo</footer>
+  </div>
+</body>
+</html>
